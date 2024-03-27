@@ -1,0 +1,28 @@
+import tkinter as tk
+
+# Mendefinisikan fungsi untuk menggambar persegi panjang
+def draw_rectangle(x1, y1, x2, y2):
+  canvas.create_rectangle(x1, y1, x2, y2, fill="blue", outline="black")
+
+# Mendefinisikan jendela utama
+root = tk.Tk()
+root.title("Gambar Persegi Panjang")
+
+# Menambahkan frame
+frame = tk.Frame(root)
+frame.pack()
+
+# Menambahkan label
+label = tk.Label(frame, text="Gambar Persegi Panjang")
+label.pack()
+
+# Menambahkan canvas
+canvas = tk.Canvas(frame, width=800, height=600)
+canvas.pack()
+
+# Menambahkan tombol untuk menggambar
+button = tk.Button(frame, text="Gambar", command=lambda: draw_rectangle(100, 100, 500, 300))
+button.pack()
+
+# Menjalankan loop utama
+root.mainloop()
