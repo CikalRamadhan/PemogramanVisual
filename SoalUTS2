@@ -1,0 +1,35 @@
+import tkinter as tk
+
+# Fungsi untuk menggambar lingkaran
+def draw_circle(canvas, x, y, radius):
+    canvas.create_oval(x-radius, y-radius, x+radius, y+radius, outline="red")
+
+# Fungsi utama
+def main():
+    # Buat jendela
+    window = tk.Tk()
+    window.title("Gambar Bunga")
+
+    # Buat kanvas
+    canvas = tk.Canvas(window, width=500, height=400)
+    canvas.pack()
+
+    # Gambar lingkaran pusat
+    draw_circle(canvas, 100, 100, 400)
+
+    # Gambar lingkaran sekitar
+    draw_circle(canvas, 104, 102, 2)
+    draw_circle(canvas, 104, 98, 2)
+    draw_circle(canvas, 96, 102, 2)
+    draw_circle(canvas, 96, 98, 2)
+    draw_circle(canvas, 100, 96, 2)
+    draw_circle(canvas, 100, 104, 2)
+    draw_circle(canvas, 102, 100, 2)
+    draw_circle(canvas, 98, 100, 2)
+
+    # Jalankan loop utama
+    window.mainloop()
+
+# Jalankan fungsi utama
+if __name__ == "__main__":
+    main()
